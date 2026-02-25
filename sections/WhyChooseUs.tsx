@@ -32,7 +32,7 @@ export function WhyChooseUs() {
                         Our Advantage
                     </span>
                     <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-                        Why Choose <span className="gradient-text">Saasify?</span>
+                        Why Choose <span className="gradient-text">Finova?</span>
                     </h2>
                     <p className="mt-3.5 max-w-md mx-auto text-[15px]" style={{ color: "#64748b" }}>
                         Built by financial experts, designed for everyday people. See what sets us apart.

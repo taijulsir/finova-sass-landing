@@ -19,7 +19,7 @@ const testimonials = [
         stars: 5,
     },
     {
-        content: "I recommend Saasify to all my clients. It turns complex financial data into gorgeous, easy-to-read charts anyone can understand.",
+        content: "I recommend Finova to all my clients. It turns complex financial data into gorgeous, easy-to-read charts anyone can understand.",
         author: "Elena Rodriguez",
         role: "Financial Advisor",
         initials: "ER",
@@ -27,7 +27,7 @@ const testimonials = [
         stars: 5,
     },
     {
-        content: "Switching from spreadsheets to Saasify was the best business decision I made this year. Hours saved every single week.",
+        content: "Switching from spreadsheets to Finova was the best business decision I made this year. Hours saved every single week.",
         author: "James Turner",
         role: "Startup Founder",
         initials: "JT",
@@ -43,7 +43,7 @@ const testimonials = [
         stars: 5,
     },
     {
-        content: "Beautiful design, powerful features. Saasify makes me *want* to check my finances instead of dreading it.",
+        content: "Beautiful design, powerful features. Finova makes me *want* to check my finances instead of dreading it.",
         author: "Lucas Müller",
         role: "UX Designer",
         initials: "LM",

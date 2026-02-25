@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Container } from "@/components/Container";
 import { siteConfig } from "@/config/site";
@@ -24,18 +25,15 @@ export function Navbar() {
         >
             <Container className="flex h-18 items-center justify-between py-4">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2.5 group">
-                    <div
-                        className="relative flex h-8 w-8 items-center justify-center rounded-lg"
-                        style={{ background: "linear-gradient(135deg, #6366f1, #7c3aed)" }}
-                    >
-                        <span className="font-black text-white text-sm leading-none">S</span>
-                        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-60 transition-opacity duration-300"
-                            style={{ background: "linear-gradient(135deg, #818cf8, #a78bfa)" }} />
-                    </div>
-                    <span className="text-[17px] font-bold text-white tracking-tight group-hover:text-indigo-300 transition-colors duration-300">
-                        {siteConfig.name}
-                    </span>
+                <Link href="/" className="flex items-center group">
+                    <Image
+                        src="/finova-with-text.svg"
+                        alt={siteConfig.name}
+                        width={120}
+                        height={30}
+                        priority
+                        className="brightness-0 invert group-hover:opacity-80 transition-opacity duration-300"
+                    />
                 </Link>
 
                 {/* Desktop Nav */}

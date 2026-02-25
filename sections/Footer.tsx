@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { siteConfig } from "@/config/site";
 
@@ -51,13 +52,14 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
                     {/* Brand column */}
                     <div className="lg:col-span-2">
-                        <Link href="/" className="flex items-center gap-2.5 mb-6 group w-fit">
-                            <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-violet-500 to-indigo-600 shadow-lg shadow-violet-500/30">
-                                <span className="font-black text-white text-lg leading-none">S</span>
-                            </div>
-                            <span className="text-xl font-bold text-white tracking-tight group-hover:text-violet-300 transition-colors">
-                                {siteConfig.name}
-                            </span>
+                        <Link href="/" className="flex items-center mb-6 group w-fit">
+                            <Image
+                                src="/finova-with-text.svg"
+                                alt={siteConfig.name}
+                                width={120}
+                                height={30}
+                                className="brightness-0 invert group-hover:opacity-80 transition-opacity duration-300"
+                            />
                         </Link>
 
                         <p className="text-white/45 max-w-sm mb-6 leading-relaxed text-sm">

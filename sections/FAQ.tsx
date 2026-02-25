@@ -21,7 +21,7 @@ const faqs = [
         answer: "One click from your account dashboard. No questions asked, no holding fees. You'll retain full access until the end of your current billing period.",
     },
     {
-        question: "Does Saasify support multiple currencies?",
+        question: "Does Finova support multiple currencies?",
         answer: "Yes! We support 150+ currencies with real-time exchange rates. You can view all your accounts in your base currency or individually.",
     },
 ];
@@ -51,7 +51,7 @@ export function FAQ() {
                             Everything you need to know about the product and billing. Still have questions?
                         </p>
                         <a
-                            href="mailto:hello@saasify.io"
+                            href="mailto:hello@finova.io"
                             className="anim-hidden animate-fade-up delay-300 mt-6 inline-flex items-center gap-2 text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors group"
                         >
                             Contact support

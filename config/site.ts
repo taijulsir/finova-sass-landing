@@ -1,5 +1,5 @@
 export const siteConfig = {
-    name: "Saasify",
+    name: "Finova",
     description: "Smarter Ways to Manage Your Finances",
     mainNav: [
         { title: "Home", href: "/" },

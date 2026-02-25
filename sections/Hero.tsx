@@ -125,7 +125,7 @@ export function Hero() {
                                     <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
                                     <div className="mx-3 flex-1 h-5 rounded-md flex items-center px-2"
                                         style={{ background: "rgba(99,102,241,0.07)" }}>
-                                        <span className="text-[10px]" style={{ color: "#334155" }}>app.saasify.io/dashboard</span>
+                                        <span className="text-[10px]" style={{ color: "#334155" }}>app.finova.io/dashboard</span>
                                     </div>
                                 </div>
 

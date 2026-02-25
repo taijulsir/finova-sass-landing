@@ -13,21 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saasify | Smarter Ways to Manage Your Finances",
-  description: "Taking control of your finances in 3 simple steps with Saasify.",
-  metadataBase: new URL("https://saasify.example.com"),
+  title: "Finova | Smarter Ways to Manage Your Finances",
+  description: "Taking control of your finances in 3 simple steps with Finova.",
+  metadataBase: new URL("https://finova.example.com"),
+  icons: {
+    icon: "/finova-without-text.svg",
+    shortcut: "/finova-without-text.svg",
+  },
   openGraph: {
-    title: "Saasify | Smarter Ways to Manage Your Finances",
-    description: "Taking control of your finances in 3 simple steps with Saasify.",
-    url: "https://saasify.example.com",
-    siteName: "Saasify",
+    title: "Finova | Smarter Ways to Manage Your Finances",
+    description: "Taking control of your finances in 3 simple steps with Finova.",
+    url: "https://finova.example.com",
+    siteName: "Finova",
     images: ["/og.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saasify | Smarter Ways to Manage Your Finances",
-    description: "Taking control of your finances in 3 simple steps with Saasify.",
+    title: "Finova | Smarter Ways to Manage Your Finances",
+    description: "Taking control of your finances in 3 simple steps with Finova.",
     images: ["/og.jpg"],
   },
 };
