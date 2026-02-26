@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import Link from "next/link";
@@ -38,12 +39,12 @@ export function Pricing() {
     return (
         <Section id="pricing" className="relative overflow-hidden">
             <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] opacity-15"
-                style={{ background: "radial-gradient(ellipse, rgba(99,102,241,0.6) 0%, transparent 70%)", filter: "blur(60px)" }} />
+                style={{ background: "radial-gradient(ellipse, rgba(198,255,0,0.4) 0%, transparent 70%)", filter: "blur(60px)" }} />
 
             <Container className="relative z-10">
                 <div className="text-center mb-14">
                     <span className="inline-flex items-center rounded-full px-3.5 py-1 text-[11px] font-semibold uppercase tracking-widest mb-5"
-                        style={{ background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.2)", color: "#a5b4fc" }}>
+                        style={{ background: "rgba(142,249,198,0.1)", border: "1px solid rgba(142,249,198,0.2)", color: "#8EF9C6" }}>
                         Pricing
                     </span>
                     <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
@@ -55,68 +56,56 @@ export function Pricing() {
 
                     {/* Toggle */}
                     <div className="mt-7 inline-flex items-center gap-1 p-1 rounded-full"
-                        style={{ background: "rgba(15,23,42,0.8)", border: "1px solid rgba(99,102,241,0.15)" }}>
+                        style={{ background: "rgba(15,46,35,0.8)", border: "1px solid var(--border)" }}>
                         <button onClick={() => setYearly(false)}
-                            className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200"
-                            style={!yearly ? { background: "linear-gradient(135deg,#6366f1,#7c3aed)", color: "#fff" } : { color: "#64748b" }}>
+                            className={cn("px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200", !yearly ? 'btn-primary' : 'text-muted-foreground')}
+                            style={!yearly ? { color: '#061A14' } : { color: 'var(--muted-foreground)' }}>
                             Monthly
                         </button>
                         <button onClick={() => setYearly(true)}
-                            className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200"
-                            style={yearly ? { background: "linear-gradient(135deg,#6366f1,#7c3aed)", color: "#fff" } : { color: "#64748b" }}>
+                            className={cn("flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200", yearly ? 'btn-primary' : 'text-muted-foreground')}
+                            style={yearly ? { color: '#061A14' } : { color: 'var(--muted-foreground)' }}>
                             Yearly
-                            <span className="text-xs font-bold px-1.5 py-0.5 rounded-full text-white"
-                                style={{ background: "#06b6d4" }}>-35%</span>
+                            <span className="text-xs font-bold px-1.5 py-0.5 rounded-full text-[#061A14]"
+                                style={{ background: "var(--gradient-accent)" }}>-35%</span>
                         </button>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
                     {plans.map((plan, i) => (
-                        <div key={i} className={`pricing-card p-7 flex flex-col ${plan.highlighted ? "featured md:scale-105 md:z-10" : ""}`}>
+                        <div key={i} className={`pricing-card p-7 flex flex-col ${plan.highlighted ? "featured md:scale-105 md:z-10 pricing-featured" : ""}`}>
                             {plan.badge && (
-                                <div className="mb-4 self-start inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold text-white"
-                                    style={{ background: "linear-gradient(135deg, #6366f1, #7c3aed)" }}>
-                                    ✦ {plan.badge}
-                                </div>
+                                <div className="mb-4 self-start inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold text-[#061A14]"
+                                    style={{ background: "var(--gradient-primary)" }}>
+                                        ✦ {plan.badge}
+                                    </div>
                             )}
                             <h3 className="text-xl font-bold text-white mb-1.5">{plan.name}</h3>
-                            <p className="text-sm mb-5" style={{ color: "#64748b" }}>{plan.description}</p>
+                            <p className="text-sm mb-5" style={{ color: "var(--muted-foreground)" }}>{plan.description}</p>
 
                             <div className="flex items-baseline gap-1 mb-7">
                                 <span className="text-4xl font-black text-white">
                                     {yearly ? plan.yearlyPrice : plan.monthlyPrice}
                                 </span>
-                                <span className="text-base" style={{ color: "#475569" }}>/mo</span>
-                                {yearly && <span className="text-xs ml-1" style={{ color: "#06b6d4" }}>billed yearly</span>}
+                                <span className="text-base" style={{ color: "var(--muted-fg-dark)" }}>/mo</span>
+                                {yearly && <span className="text-xs ml-1" style={{ color: "#8EF9C6" }}>billed yearly</span>}
                             </div>
 
                             <ul className="space-y-3 mb-7 flex-1">
                                 {plan.features.map((f, j) => (
-                                    <li key={j} className="flex items-center gap-2.5 text-sm" style={{ color: "#94a3b8" }}>
+                                    <li key={j} className="flex items-center gap-2.5 text-sm" style={{ color: "var(--muted-foreground)" }}>
                                         <svg className="w-4 h-4 shrink-0" viewBox="0 0 16 16" fill="none">
-                                            <circle cx="8" cy="8" r="7.5" stroke={plan.highlighted ? "#6366f1" : "rgba(255,255,255,0.15)"} />
-                                            <path d="M5 8l2 2 4-4" stroke={plan.highlighted ? "#a5b4fc" : "rgba(255,255,255,0.4)"}
+                                            <circle cx="8" cy="8" r="7.5" stroke={plan.highlighted ? "#C6FF00" : "rgba(142,249,198,0.15)"} />
+                                            <path d="M5 8l2 2 4-4" stroke={plan.highlighted ? "#061A14" : "rgba(142,249,198,0.4)"}
                                                 strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                         {f}
                                     </li>
                                 ))}
                             </ul>
-
                             <Link href="#"
-                                className="w-full py-3 rounded-xl text-center text-sm font-semibold transition-all duration-300"
-                                style={plan.highlighted
-                                    ? { background: "linear-gradient(135deg,#6366f1,#7c3aed)", color: "#fff", boxShadow: "0 8px 28px rgba(99,102,241,0.4)" }
-                                    : { color: "#94a3b8", border: "1px solid rgba(99,102,241,0.18)" }}
-                                onMouseEnter={(e) => {
-                                    if (!plan.highlighted)
-                                        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(99,102,241,0.4)";
-                                }}
-                                onMouseLeave={(e) => {
-                                    if (!plan.highlighted)
-                                        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(99,102,241,0.18)";
-                                }}
+                                className={`w-full py-3 rounded-xl text-center text-sm font-semibold transition-all duration-300 ${plan.highlighted ? 'btn-primary' : 'btn-ghost'}`}
                             >
                                 {plan.cta}
                             </Link>
