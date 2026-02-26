@@ -34,14 +34,14 @@ export function FAQ() {
             {/* Bg glow */}
             <div
                 className="pointer-events-none absolute top-1/2 right-0 w-[400px] h-[400px] -translate-y-1/2 opacity-15"
-                style={{ background: "radial-gradient(ellipse, rgba(79,70,229,0.6) 0%, transparent 70%)", filter: "blur(70px)" }}
+                style={{ background: "radial-gradient(ellipse, rgba(198,255,0,0.3) 0%, transparent 70%)", filter: "blur(70px)" }}
             />
 
             <Container className="relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
                     {/* Left column */}
                     <div className="lg:col-span-4">
-                        <span className="anim-hidden animate-fade-in inline-flex items-center rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3.5 py-1 text-xs font-semibold text-indigo-300 uppercase tracking-widest mb-5">
+                        <span className="anim-hidden animate-fade-in inline-flex items-center rounded-full border border-[#C6FF00]/25 bg-[#C6FF00]/10 px-3.5 py-1 text-xs font-semibold text-[#C6FF00] uppercase tracking-widest mb-5">
                             FAQ
                         </span>
                         <h2 className="anim-hidden animate-fade-up delay-100 text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -52,7 +52,7 @@ export function FAQ() {
                         </p>
                         <a
                             href="mailto:hello@finova.io"
-                            className="anim-hidden animate-fade-up delay-300 mt-6 inline-flex items-center gap-2 text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors group"
+                            className="anim-hidden animate-fade-up delay-300 mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#8EF9C6] hover:text-[#C6FF00] transition-colors group"
                         >
                             Contact support
                             <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -66,8 +66,8 @@ export function FAQ() {
                                 key={i}
                                 className={`anim-hidden animate-fade-up delay-${(i + 2) * 100} rounded-2xl overflow-hidden transition-all duration-300`}
                                 style={{
-                                    background: open === i ? "rgba(124,58,237,0.08)" : "rgba(255,255,255,0.03)",
-                                    border: open === i ? "1px solid rgba(124,58,237,0.3)" : "1px solid rgba(255,255,255,0.07)",
+                                    background: open === i ? "rgba(198,255,0,0.08)" : "rgba(255,255,255,0.03)",
+                                    border: open === i ? "1px solid rgba(198,255,0,0.3)" : "1px solid rgba(255,255,255,0.07)",
                                 }}
                             >
                                 <button
@@ -80,8 +80,8 @@ export function FAQ() {
                                     <div
                                         className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${open === i ? "rotate-45" : ""}`}
                                         style={{
-                                            background: open === i ? "rgba(124,58,237,0.3)" : "rgba(255,255,255,0.05)",
-                                            border: open === i ? "1px solid rgba(124,58,237,0.4)" : "1px solid rgba(255,255,255,0.1)",
+                                            background: open === i ? "rgba(198,255,0,0.3)" : "rgba(255,255,255,0.05)",
+                                            border: open === i ? "1px solid rgba(198,255,0,0.4)" : "1px solid rgba(255,255,255,0.1)",
                                         }}
                                     >
                                         <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -45,7 +45,7 @@ export function Footer() {
             {/* Bg glow */}
             <div
                 className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] opacity-10"
-                style={{ background: "radial-gradient(ellipse, rgba(124,58,237,0.8) 0%, transparent 70%)", filter: "blur(40px)" }}
+                style={{ background: "radial-gradient(ellipse, rgba(142,249,198,0.5) 0%, transparent 70%)", filter: "blur(40px)" }}
             />
 
             <Container className="relative z-10">
@@ -73,7 +73,7 @@ export function Footer() {
                                     key={s.name}
                                     href={s.href}
                                     aria-label={s.name}
-                                    className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-violet-500/20 hover:border-violet-500/40 transition-all duration-200"
+                                    className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#061A14] hover:bg-[#C6FF00] hover:border-[#C6FF00] transition-all duration-200"
                                 >
                                     {s.icon}
                                 </a>
@@ -127,7 +127,7 @@ export function Footer() {
                 {/* Gradient divider */}
                 <div
                     className="h-px w-full mb-8"
-                    style={{ background: "linear-gradient(90deg, transparent, rgba(124,58,237,0.5), rgba(79,70,229,0.5), transparent)" }}
+                    style={{ background: "var(--gradient-primary)" }}
                 />
 
                 {/* Bottom bar */}
@@ -137,8 +137,8 @@ export function Footer() {
                     </p>
                     <div className="flex items-center gap-2 text-white/30 text-sm">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6FF00] opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C6FF00]" />
                         </span>
                         All systems operational
                     </div>

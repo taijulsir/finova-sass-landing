@@ -7,7 +7,7 @@ const testimonials = [
         author: "Sarah Jenkins",
         role: "Freelance Designer",
         initials: "SJ",
-        color: "#7c3aed",
+        color: "#C6FF00",
         stars: 5,
     },
     {
@@ -15,7 +15,7 @@ const testimonials = [
         author: "Michael Chang",
         role: "Software Engineer",
         initials: "MC",
-        color: "#06b6d4",
+        color: "#8EF9C6",
         stars: 5,
     },
     {
@@ -23,7 +23,7 @@ const testimonials = [
         author: "Elena Rodriguez",
         role: "Financial Advisor",
         initials: "ER",
-        color: "#ec4899",
+        color: "#A3C9B8",
         stars: 5,
     },
     {
@@ -31,7 +31,7 @@ const testimonials = [
         author: "James Turner",
         role: "Startup Founder",
         initials: "JT",
-        color: "#10b981",
+        color: "#C6FF00",
         stars: 5,
     },
     {
@@ -39,7 +39,7 @@ const testimonials = [
         author: "Priya Nair",
         role: "Product Manager",
         initials: "PN",
-        color: "#f59e0b",
+        color: "#8EF9C6",
         stars: 5,
     },
     {
@@ -47,7 +47,7 @@ const testimonials = [
         author: "Lucas Müller",
         role: "UX Designer",
         initials: "LM",
-        color: "#8b5cf6",
+        color: "#A3C9B8",
         stars: 5,
     },
 ];
@@ -91,13 +91,13 @@ export function Testimonials() {
             {/* Bg accent */}
             <div
                 className="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[400px] opacity-15"
-                style={{ background: "radial-gradient(ellipse, rgba(236,72,153,0.5) 0%, transparent 70%)", filter: "blur(80px)" }}
+                style={{ background: "radial-gradient(ellipse, rgba(198,255,0,0.3) 0%, transparent 70%)", filter: "blur(80px)" }}
             />
 
             <Container className="relative z-10 pb-0">
                 {/* Heading */}
                 <div className="text-center mb-14">
-                    <span className="anim-hidden animate-fade-in inline-flex items-center rounded-full border border-pink-500/25 bg-pink-500/10 px-3.5 py-1 text-xs font-semibold text-pink-300 uppercase tracking-widest mb-5">
+                    <span className="anim-hidden animate-fade-in inline-flex items-center rounded-full border border-[#C6FF00]/25 bg-[#C6FF00]/10 px-3.5 py-1 text-xs font-semibold text-[#C6FF00] uppercase tracking-widest mb-5">
                         Testimonials
                     </span>
                     <h2 className="anim-hidden animate-fade-up delay-100 text-4xl md:text-5xl font-extrabold text-white tracking-tight">
@@ -113,10 +113,10 @@ export function Testimonials() {
             <div className="relative overflow-hidden py-2">
                 {/* Left fade */}
                 <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 z-10"
-                    style={{ background: "linear-gradient(90deg, #050510, transparent)" }} />
+                    style={{ background: "linear-gradient(90deg, var(--background), transparent)" }} />
                 {/* Right fade */}
                 <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 z-10"
-                    style={{ background: "linear-gradient(-90deg, #050510, transparent)" }} />
+                    style={{ background: "linear-gradient(-90deg, var(--background), transparent)" }} />
 
                 {/* Row 1 — LTR */}
                 <div className="flex animate-ticker mb-5" style={{ width: "max-content" }}>
