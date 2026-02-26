@@ -26,12 +26,12 @@ const steps = [
 const SharedDefs = () => (
     <defs>
         <linearGradient id="glr" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#818cf8" stopOpacity="0.35" />
+            <stop offset="0%" stopColor="#C6FF00" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#8EF9C6" stopOpacity="0.35" />
         </linearGradient>
         <linearGradient id="grl" x1="1" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#818cf8" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.35" />
+            <stop offset="0%" stopColor="#8EF9C6" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#C6FF00" stopOpacity="0.35" />
         </linearGradient>
         <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="1.4" result="blur" />
@@ -58,7 +58,7 @@ const CurveLeftToRight = () => (
             {/* Ghost base path — always visible, very faint */}
             <path
                 d="M 25,0 C 25,50 75,50 75,100"
-                stroke="#a78bfa"
+                stroke="#C6FF00"
                 strokeOpacity="0.12"
                 strokeWidth="0.8"
             />
@@ -77,7 +77,7 @@ const CurveLeftToRight = () => (
             {/* Arrowhead at destination */}
             <polygon
                 points="75,100 72.5,93.5 77.5,93.5"
-                fill="#818cf8"
+                fill="#8EF9C6"
                 fillOpacity="0.5"
             />
         </svg>
@@ -99,7 +99,7 @@ const CurveRightToLeft = () => (
             {/* Ghost base path */}
             <path
                 d="M 75,0 C 75,50 25,50 25,100"
-                stroke="#a78bfa"
+                stroke="#C6FF00"
                 strokeOpacity="0.12"
                 strokeWidth="0.8"
             />
@@ -118,7 +118,7 @@ const CurveRightToLeft = () => (
             {/* Arrowhead at destination */}
             <polygon
                 points="25,100 22.5,93.5 27.5,93.5"
-                fill="#a78bfa"
+                fill="#C6FF00"
                 fillOpacity="0.5"
             />
         </svg>
@@ -139,9 +139,9 @@ const StepCard = ({ s }: { s: typeof steps[0] }) => (
             <span
                 className="inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold"
                 style={{
-                    background: "rgba(167,139,250,0.1)",
-                    border: "1px solid rgba(167,139,250,0.22)",
-                    color: "#c4b5fd",
+                    background: "rgba(198,255,0,0.1)",
+                    border: "1px solid rgba(198,255,0,0.22)",
+                    color: "#C6FF00",
                 }}
             >
                 {s.step}
@@ -165,8 +165,8 @@ export function Steps() {
                     <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                         Up and running in{" "}
                         <span
-                            className="text-transparent bg-clip-text"
-                            style={{ backgroundImage: "linear-gradient(135deg, #a78bfa, #818cf8)" }}
+                            className="text-white bg-clip-text"
+                            style={{ background: "var(--gradient-primary)" }}
                         >
                             3 simple steps
                         </span>
@@ -206,21 +206,21 @@ export function Steps() {
                                 <div
                                     className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1"
                                     style={{
-                                        background: "rgba(167,139,250,0.08)",
-                                        border: "1px solid rgba(167,139,250,0.22)",
+                                        background: "rgba(198,255,0,0.08)",
+                                        border: "1px solid rgba(198,255,0,0.22)",
                                     }}
                                 >
-                                    <span className="text-[11px] font-bold text-violet-300">{s.step}</span>
+                                    <span className="text-[11px] font-bold text-[#C6FF00]">{s.step}</span>
                                 </div>
                                 {i < steps.length - 1 && (
                                     <div className="relative w-px flex-1 my-2 overflow-hidden" style={{ minHeight: 36 }}>
                                         {/* Static base */}
-                                        <div className="absolute inset-0" style={{ background: "rgba(167,139,250,0.12)" }} />
+                                        <div className="absolute inset-0" style={{ background: "rgba(198,255,0,0.12)" }} />
                                         {/* Animated travelling highlight */}
                                         <div
                                             className="absolute left-0 right-0 h-8"
                                             style={{
-                                                background: "linear-gradient(180deg, transparent, rgba(167,139,250,0.55), transparent)",
+                                                background: "var(--gradient-accent)",
                                                 animation: "flow-vertical 2s ease-in-out infinite",
                                             }}
                                         />
