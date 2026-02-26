@@ -11,7 +11,7 @@ export function CTA() {
                     <div
                         className="absolute inset-0 rounded-[2.5rem] animate-bg-shift"
                         style={{
-                            background: "linear-gradient(135deg, #3b0764, #4f46e5, #7c3aed, #6d28d9, #4338ca)",
+                            background: "var(--gradient-primary)",
                             backgroundSize: "300% 300%",
                         }}
                     />
@@ -30,7 +30,7 @@ export function CTA() {
                     <div
                         className="absolute inset-0 rounded-[2.5rem] opacity-[0.06]"
                         style={{
-                            backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+                            backgroundImage: "linear-gradient(var(--muted-foreground) 1px, transparent 1px), linear-gradient(90deg, var(--muted-foreground) 1px, transparent 1px)",
                             backgroundSize: "40px 40px",
                         }}
                     />
@@ -55,7 +55,7 @@ export function CTA() {
                         <div className="flex flex-col sm:flex-row items-center gap-4">
                             <Link
                                 href="#"
-                                className="relative group inline-flex items-center gap-2 rounded-full px-10 py-5 text-lg font-bold text-violet-700 overflow-hidden bg-white hover:bg-white/95 shadow-2xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
+                                className="relative group inline-flex items-center gap-2 rounded-full px-10 py-5 text-lg font-bold text-[#061A14] overflow-hidden bg-[#C6FF00] hover:bg-[#A3D900] shadow-2xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(198,255,0,0.4)]"
                             >
                                 Start Your Free Trial
                                 <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
