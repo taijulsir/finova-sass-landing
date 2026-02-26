@@ -8,7 +8,8 @@ export const GradientButton = forwardRef<HTMLButtonElement, React.ComponentProps
             <Button
                 ref={ref}
                 className={cn(
-                    "relative overflow-hidden bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white border-0 shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all hover:shadow-[0_0_25px_rgba(139,92,246,0.7)]",
+                    "relative overflow-hidden text-white border-0 transition-all",
+                    "btn-primary",
                     className
                 )}
                 {...props}

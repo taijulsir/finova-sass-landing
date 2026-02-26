@@ -57,32 +57,33 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-  /* Base background — deep navy */
-  --background: #0B0F1A;
+  /* Base background — deep layered emerald/teal */
+  --background: #061A14;
   --foreground: #F1F5F9;
 
   /* Cards */
-  --card: rgba(15, 23, 42, 0.7);
+  --card: rgba(15, 46, 35, 0.6);
   --card-foreground: #F1F5F9;
 
   /* Popover */
-  --popover: #0F172A;
+  --popover: #0F2E23;
   --popover-foreground: #F1F5F9;
 
-  /* Primary — Indigo */
-  --primary: #6366f1;
-  --primary-foreground: #F1F5F9;
+  /* Primary — Electric Lime */
+  --primary: #C6FF00;
+  --primary-foreground: #061A14;
 
-  /* Secondary — Slate */
-  --secondary: #1e293b;
-  --secondary-foreground: #F1F5F9;
+  /* Secondary — Soft Mint */
+  --secondary: #8EF9C6;
+  --secondary-foreground: #061A14;
 
   /* Muted */
-  --muted: #1e293b;
-  --muted-foreground: #64748b;
+  --muted: #133D2E;
+  /* stronger muted foreground for small text to improve contrast */
+  --muted-foreground: #A3C9B8;
 
   /* Accent */
-  --accent: rgba(99, 102, 241, 0.12);
+  --accent: rgba(198, 255, 0, 0.12);
   --accent-foreground: #F1F5F9;
 
   /* Destructive */
@@ -90,19 +91,35 @@
   --destructive-foreground: #F1F5F9;
 
   /* Border / Input / Ring */
-  --border: rgba(99, 102, 241, 0.15);
-  --input: rgba(99, 102, 241, 0.12);
-  --ring: #6366f1;
+  --border: rgba(142, 249, 198, 0.15);
+  --input: rgba(142, 249, 198, 0.12);
+  --ring: #C6FF00;
+  
+  /* primary color variations (use these instead of ad-hoc rgba in components) */
+  --primary-500: #C6FF00;
+  --primary-600: #A3D900;
+  --primary-100: rgba(198, 255, 0, 0.12);
+  --focus-ring: rgba(198, 255, 0, 0.28);
+  
+  /* Primary gradients - change these to update the site-wide gradient theme */
+  --gradient-primary: linear-gradient(135deg, #061A14 0%, #0F2E23 100%); /* deep emerald -> dark teal */
+  --gradient-accent: linear-gradient(135deg, #8EF9C6 0%, #C6FF00 100%); /* soft mint -> electric lime */
+  
+  /* darker muted used for subtle headings/labels */
+  --muted-fg-dark: #4A7A64;
 
   /* Border radius */
   --radius: 0.875rem;
 
   /* ── Brand palette shortcodes ── */
-  --indigo: #6366f1;
-  --violet: #7c3aed;
-  --cyan: #06b6d4;
-  --muted-fg: #94a3b8;
+  --indigo: #C6FF00; /* Re-mapped to Electric Lime for legacy classes */
+  --violet: #8EF9C6; /* Re-mapped to Soft Mint for legacy classes */
+  --cyan: #0F2E23;   /* Re-mapped to Dark Teal for legacy classes */
+  --muted-fg: #A3C9B8;
 }
+
+/* ─── Global Styles ─────────────────────────────────────────── */
+/* Removed duplicate body block */
 
 /* ─── Keyframes ─────────────────────────────────────────────── */
 @keyframes bg-shift {
@@ -381,7 +398,7 @@
 
 /* ─── Text Gradient ─────────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #a5b4fc, #818cf8, #67e8f9, #a5b4fc);
+  background: var(--gradient-primary);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -389,18 +406,106 @@
   animation: gradient-text-shift 6s ease infinite;
 }
 
+/* ─── Utility button classes (centralized, accessible) ───────────────── */
+.btn-primary {
+  color: var(--color-primary-foreground);
+  background: var(--primary);
+  border: 0;
+  box-shadow: 0 0 24px rgba(198, 255, 0, 0.16), 0 0 48px rgba(198, 255, 0, 0.06);
+  transition: box-shadow 200ms ease, transform 160ms ease, background-color 160ms ease;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--primary-600);
+  box-shadow: 0 0 28px rgba(198, 255, 0, 0.22), 0 0 56px rgba(198, 255, 0, 0.09);
+}
+
+.btn-ghost {
+  color: var(--muted-foreground);
+  background: transparent;
+  border: 1px solid var(--border);
+  transition: background-color 180ms ease, color 160ms ease, border-color 160ms ease;
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  color: var(--color-primary-foreground);
+  background: var(--primary);
+  border-color: var(--primary-600);
+}
+
+/* Reason cards used by features/why sections */
+.reason-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: background-color 180ms ease, border-color 160ms ease, transform 180ms ease;
+}
+.reason-card:hover {
+  background: var(--primary-100);
+  border-color: var(--primary-600);
+}
+
+/* Pricing helpers */
+.pricing-featured {
+  box-shadow: 0 8px 28px rgba(99,102,241,0.4);
+}
+
+/* Trusted-by name hover helper */
+.trusted-name {
+  color: var(--muted-fg-dark);
+  transition: color 160ms ease;
+}
+.trusted-name:hover,
+.trusted-name:focus-visible {
+  color: var(--muted-foreground);
+}
+
+/* Admin / Brand override: apply this class on <html> or <body> to switch accent to brand green */
+.theme-admin {
+  --primary-500: #10b981; /* emerald-500 */
+  --primary-600: #059669; /* emerald-600 */
+  --primary-100: rgba(16,185,129,0.12);
+  --accent: rgba(16,185,129,0.12);
+  --border: rgba(16,185,129,0.12);
+  --focus-ring: rgba(16,185,129,0.24);
+}
+
+/* Focus styles for keyboard users */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [role="button"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--focus-ring);
+  border-radius: 0.5rem;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-float,
+  .animate-orb-float-r,
+  .animate-orb-float-3,
+  .animate-bg-shift,
+  .gradient-text,
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in,
+  .animate-ticker {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /* ─── Glassmorphism card ────────────────────────────────────── */
 .glass {
-  background: rgba(15, 23, 42, 0.55);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: rgba(15, 46, 35, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(142, 249, 198, 0.15);
 }
 
 /* ─── Bento feature card ────────────────────────────────────── */
 .bento-card {
-  background: linear-gradient(145deg, rgba(99, 102, 241, 0.07) 0%, rgba(15, 23, 42, 0.6) 100%);
-  border: 1px solid rgba(99, 102, 241, 0.14);
+  background: linear-gradient(145deg, rgba(142, 249, 198, 0.05) 0%, rgba(15, 46, 35, 0.6) 100%);
+  border: 1px solid rgba(142, 249, 198, 0.14);
   backdrop-filter: blur(16px);
   border-radius: 1.25rem;
   transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
@@ -408,28 +513,28 @@
 
 .bento-card:hover {
   transform: translateY(-3px) scale(1.005);
-  border-color: rgba(99, 102, 241, 0.35);
-  box-shadow: 0 16px 48px -8px rgba(99, 102, 241, 0.2);
+  border-color: rgba(142, 249, 198, 0.35);
+  box-shadow: 0 16px 48px -8px rgba(142, 249, 198, 0.2);
 }
 
 /* ─── Pricing card ──────────────────────────────────────────── */
 .pricing-card {
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(99, 102, 241, 0.12);
+  background: rgba(15, 46, 35, 0.5);
+  border: 1px solid rgba(142, 249, 198, 0.12);
   border-radius: 1.5rem;
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
 .pricing-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 24px 60px -12px rgba(99, 102, 241, 0.25);
-  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 24px 60px -12px rgba(142, 249, 198, 0.25);
+  border-color: rgba(142, 249, 198, 0.3);
 }
 
 .pricing-card.featured {
-  background: linear-gradient(145deg, rgba(99, 102, 241, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
-  border: 1.5px solid rgba(99, 102, 241, 0.4);
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.15), inset 0 0 60px rgba(99, 102, 241, 0.04);
+  background: linear-gradient(145deg, rgba(198, 255, 0, 0.08) 0%, rgba(15, 46, 35, 0.8) 100%);
+  border: 1.5px solid rgba(198, 255, 0, 0.4);
+  box-shadow: 0 0 40px rgba(198, 255, 0, 0.15), inset 0 0 60px rgba(198, 255, 0, 0.04);
 }
 
 /* ─── Shimmer ───────────────────────────────────────────────── */
@@ -447,11 +552,12 @@
 
   body {
     @apply text-foreground antialiased;
-    background-color: #0B0F1A;
+    background-color: #061A14;
     background-image:
-      radial-gradient(ellipse 80% 45% at 50% -5%, rgba(99, 102, 241, 0.22) 0%, transparent 65%),
-      radial-gradient(ellipse 55% 35% at 95% 75%, rgba(124, 58, 237, 0.12) 0%, transparent 55%),
-      radial-gradient(ellipse 45% 28% at 5% 70%, rgba(6, 182, 212, 0.07) 0%, transparent 55%);
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse 80% 45% at 50% -5%, rgba(142, 249, 198, 0.15) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 35% at 95% 75%, rgba(198, 255, 0, 0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 45% 28% at 5% 70%, rgba(15, 46, 35, 0.4) 0%, transparent 55%);
     min-height: 100vh;
   }
 
