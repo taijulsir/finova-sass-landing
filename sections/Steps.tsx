@@ -1,24 +1,25 @@
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
+import { UserPlus, Target, TrendingUp } from "lucide-react";
 
 const steps = [
     {
         step: "01",
         title: "Create Your Account",
         description: "Sign up in seconds and securely link your bank accounts and credit cards to get started.",
-        icon: "🔑",
+        icon: <UserPlus className="w-6 h-6 text-[#C6FF00]" />,
     },
     {
         step: "02",
         title: "Set Your Budgets",
         description: "Define category limits and savings goals. Our AI keeps you on track every single day.",
-        icon: "🎯",
+        icon: <Target className="w-6 h-6 text-[#8EF9C6]" />,
     },
     {
         step: "03",
         title: "Watch Your Wealth Grow",
         description: "Real-time insights, smart alerts, and detailed reports to optimise your financial health.",
-        icon: "📈",
+        icon: <TrendingUp className="w-6 h-6 text-[#A3C9B8]" />,
     },
 ];
 
@@ -165,8 +166,8 @@ export function Steps() {
                     <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                         Up and running in{" "}
                         <span
-                            className="text-white bg-clip-text"
-                            style={{ background: "var(--gradient-primary)" }}
+                            className="text-white bg-clip-text gradient-text"
+                            style={{ background: "var(--gradient-accent)" }}
                         >
                             3 simple steps
                         </span>

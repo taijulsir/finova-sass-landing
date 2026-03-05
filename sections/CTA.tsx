@@ -1,6 +1,7 @@
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
 import Link from "next/link";
+import { Rocket } from "lucide-react";
 
 export function CTA() {
     return (
@@ -38,7 +39,7 @@ export function CTA() {
                     {/* Content */}
                     <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
                         <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold text-white uppercase tracking-widest backdrop-blur-sm">
-                            🚀 Start Free Today
+                            <Rocket className="w-3.5 h-3.5" /> Start Free Today
                         </span>
 
                         <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">

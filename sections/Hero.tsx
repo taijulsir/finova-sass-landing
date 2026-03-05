@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/Container";
 import Link from "next/link";
+import { Music, Package, Briefcase, Lock } from "lucide-react";
 
 export function Hero() {
     return (
@@ -178,18 +179,18 @@ export function Hero() {
                                         <div className="rounded-xl p-3"
                                             style={{ background: "rgba(15, 46, 35, 0.7)", border: "1px solid rgba(142, 249, 198, 0.1)" }}>
                                             <div className="text-[11px] mb-2.5 font-medium" style={{ color: "var(--muted-foreground)" }}>Recent</div>
-                                            <div className="space-y-2">
+                                            <div className="space-y-4">
                                                 {[
-                                                    { name: "Spotify", amount: "-$9.99", icon: "🎵", neg: true },
-                                                    { name: "Amazon", amount: "-$42.00", icon: "📦", neg: true },
-                                                    { name: "Salary", amount: "+$4,200", icon: "💼", neg: false },
+                                                    { name: "Spotify", amount: "-$9.99", icon: <Music className="w-3 h-3 text-white" />, neg: true },
+                                                    { name: "Amazon", amount: "-$42.00", icon: <Package className="w-3 h-3 text-white" />, neg: true },
+                                                    { name: "Salary", amount: "+$4,200", icon: <Briefcase className="w-3 h-3 text-white" />, neg: false },
                                                 ].map((tx) => (
                                                     <div key={tx.name} className="flex items-center justify-between">
-                                                        <div className="flex items-center gap-1.5">
-                                                            <span className="text-xs">{tx.icon}</span>
-                                                            <span className="text-[10px]" style={{ color: "var(--muted-foreground)" }}>{tx.name}</span>
+                                                        <div className="flex items-center gap-2">
+                                                            <span className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center border border-white/5">{tx.icon}</span>
+                                                            <span className="text-[11px]" style={{ color: "var(--muted-foreground)" }}>{tx.name}</span>
                                                         </div>
-                                                        <span className="text-[10px] font-medium"
+                                                        <span className="text-[11px] font-medium"
                                                             style={{ color: tx.neg ? "#ef4444" : "#C6FF00" }}>
                                                             {tx.amount}
                                                         </span>
@@ -210,7 +211,7 @@ export function Hero() {
                         </div>
                         <div className="absolute -bottom-4 -left-4 rounded-2xl px-3.5 py-2.5"
                             style={{ background: "var(--primary-100)", border: "1px solid var(--border)", backdropFilter: "blur(16px)" }}>
-                            <div className="text-xs font-bold text-[#C6FF00]">🔒 Bank-secure</div>
+                            <div className="text-xs font-bold text-[#C6FF00] flex items-center gap-1"><Lock className="w-3 h-3" /> Bank-secure</div>
                             <div className="text-[10px]" style={{ color: "var(--muted-foreground)" }}>256-bit AES</div>
                         </div>
                     </div>
