@@ -304,6 +304,48 @@
   }
 }
 
+/* ─── 3D Orb Animations ─────────────────────────────────────── */
+@keyframes spin-slow {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+@keyframes spin-slow-reverse {
+  from { transform: rotateX(0deg); }
+  to { transform: rotateX(-360deg); }
+}
+@keyframes spin-medium {
+  from { transform: rotateZ(0deg); }
+  to { transform: rotateZ(360deg); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+@keyframes bounce-custom {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -60%) scale(1.1); }
+}
+@keyframes orbit-1 {
+  0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+@keyframes orbit-2 {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(100px) rotate(360deg); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes dash {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
 /* ─── Animation Utilities ───────────────────────────────────── */
 .animate-bg-shift {
   animation: bg-shift 10s ease infinite;
@@ -348,6 +390,21 @@
 
 .animate-pulse-ring {
   animation: pulse-ring 2s ease-out infinite;
+}
+
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-spin-slow-reverse { animation: spin-slow-reverse 25s linear infinite; }
+.animate-spin-medium { animation: spin-medium 15s linear infinite; }
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
+.animate-bounce-custom { animation: bounce-custom 3s ease-in-out infinite; }
+.animate-orbit-1 { animation: orbit-1 12s linear infinite; }
+.animate-orbit-2 { animation: orbit-2 15s linear infinite; }
+.animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+.animate-dash {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear infinite;
 }
 
 /* Delay utilities */
@@ -398,7 +455,7 @@
 
 /* ─── Text Gradient ─────────────────────────────────────────── */
 .gradient-text {
-  background: var(--gradient-primary);
+  background: var(--gradient-accent);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -552,7 +609,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
   body {
     @apply text-foreground antialiased;
-    background-color: #061A14;
+    background-color: #010705;
     background-image:
       url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E"),
       radial-gradient(ellipse 80% 45% at 50% -5%, rgba(142, 249, 198, 0.15) 0%, transparent 65%),
