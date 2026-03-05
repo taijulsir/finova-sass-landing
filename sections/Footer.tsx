@@ -58,7 +58,7 @@ export function Footer() {
                                 alt={siteConfig.name}
                                 width={120}
                                 height={30}
-                                className="brightness-0 invert group-hover:opacity-80 transition-opacity duration-300"
+                                className="group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </Link>
 

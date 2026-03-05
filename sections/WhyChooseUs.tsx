@@ -1,6 +1,14 @@
 "use client";
 import { Container } from "@/components/Container";
 import { Section } from "@/components/Section";
+import { 
+    LayoutDashboard, 
+    Palette, 
+    ShieldCheck, 
+    Zap, 
+    Headphones, 
+    Link as LinkIcon 
+} from "lucide-react";
 
 const stats = [
     { value: "50K+", label: "Active Users", color: "#C6FF00" },
@@ -10,12 +18,42 @@ const stats = [
 ];
 
 const reasons = [
-    { icon: "🧠", title: "Intuitive Dashboard", description: "Bird's-eye view of all your finances, organised and presented without clutter.", accent: "#C6FF00" },
-    { icon: "🎨", title: "Fully Customisable", description: "Unlimited custom categories, reports, and alerts that fit your unique lifestyle.", accent: "#8EF9C6" },
-    { icon: "🛡️", title: "Secure & Reliable", description: "SOC 2 Type II certified. Bank-level 256-bit encryption. We never sell your data.", accent: "#A3C9B8" },
-    { icon: "⚡", title: "Blazing Fast", description: "Globally distributed infrastructure ensures sub-50ms response times on every action.", accent: "#8EF9C6" },
-    { icon: "🤝", title: "Expert Support", description: "Certified fintech specialists available 24/7 via live chat, email, and phone.", accent: "#C6FF00" },
-    { icon: "🔗", title: "10,000+ Integrations", description: "Connect your bank, accounting software, payroll tools and 10,000+ apps out of the box.", accent: "#A3C9B8" },
+    { 
+        icon: <LayoutDashboard className="w-5 h-5 text-current" />, 
+        title: "Intuitive Dashboard", 
+        description: "Bird's-eye view of all your finances, organised and presented without clutter.", 
+        accent: "#C6FF00" 
+    },
+    { 
+        icon: <Palette className="w-5 h-5 text-current" />, 
+        title: "Fully Customisable", 
+        description: "Unlimited custom categories, reports, and alerts that fit your unique lifestyle.", 
+        accent: "#8EF9C6" 
+    },
+    { 
+        icon: <ShieldCheck className="w-5 h-5 text-current" />, 
+        title: "Secure & Reliable", 
+        description: "SOC 2 Type II certified. Bank-level 256-bit encryption. We never sell your data.", 
+        accent: "#A3C9B8" 
+    },
+    { 
+        icon: <Zap className="w-5 h-5 text-current" />, 
+        title: "Blazing Fast", 
+        description: "Globally distributed infrastructure ensures sub-50ms response times on every action.", 
+        accent: "#8EF9C6" 
+    },
+    { 
+        icon: <Headphones className="w-5 h-5 text-current" />, 
+        title: "Expert Support", 
+        description: "Certified fintech specialists available 24/7 via live chat, email, and phone.", 
+        accent: "#C6FF00" 
+    },
+    { 
+        icon: <LinkIcon className="w-5 h-5 text-current" />, 
+        title: "10,000+ Integrations", 
+        description: "Connect your bank, accounting software, payroll tools and 10,000+ apps out of the box.", 
+        accent: "#A3C9B8" 
+    },
 ];
 
 export function WhyChooseUs() {
@@ -57,8 +95,8 @@ export function WhyChooseUs() {
                             className="group p-5 rounded-2xl flex items-start gap-4 cursor-default transition-all duration-300 reason-card"
                             style={{}}
                         >
-                            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform duration-300"
-                                style={{ background: `${r.accent}12`, border: `1px solid ${r.accent}22` }}>
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300"
+                                style={{ background: `${r.accent}12`, border: `1px solid ${r.accent}22`, color: r.accent }}>
                                 {r.icon}
                             </div>
                             <div>
